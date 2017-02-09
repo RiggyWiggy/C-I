@@ -19,6 +19,65 @@ ul {
 	list-style-type: none;
 	font-weight: 700;
 }
+/**Gallery by Lucas**/
+.full-gal-img{
+	position: relative;
+	display: block;
+	margin: 0 auto;
+width: 60%;
+	
+}
+.full-img-cont{
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, 0.8);
+	
+}
+.show{
+	display: block;
+}
+
+.galImg{
+	position: relative;
+	display: block;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+#workGallery{
+	display: inline-block;
+	position: relative;
+
+}
+.next{
+	position: relative;
+	display: inline-block;
+	right: 5%;
+	float: right;
+	top: 5%;
+}
+.prev{
+	position: relative;
+	display: inline-block;
+	float: left;
+	top: 5%;
+	left: 5%;
+}
+.arrow{
+	width: 50px;
+}
+.closer{
+	width: 50px;
+	padding: 10px;
+	top: 0;
+	right: 0;	
+	display: block;
+	position: relative;
+}
+/****/
 #topWindow {
 	width: 100%;
 	padding-top: 56px;
@@ -433,7 +492,51 @@ footer ul {
 #logo {
 	display: block;
 }
-
+@media screen and (min-width: 20em) {
+.next{
+	position: relative;
+	display: inline-block;
+	right: 5%;
+	float: right;
+	top: 10%;
+}
+.prev{
+	position: relative;
+	display: inline-block;
+	float: left;
+	top: 10%;
+	left: 5%;
+}
+.arrow{
+	width: 50px;
+}
+@media screen and (min-width: 50em) {
+.next{
+	position: relative;
+	display: inline-block;
+	right: 5%;
+	float: right;
+	top: 20%;
+}
+.prev{
+	position: relative;
+	display: inline-block;
+	float: left;
+	top: 20%;
+	left: 5%;
+}
+.arrow{
+	width: 50px;
+}
+.closer{
+	width: 50px;
+	padding: 10px;
+	top: 0;
+	right: 0;	
+	display: block;
+	position: relative;
+}
+}
 @media screen and (min-width: 64em) {
 #logoDesktop {
 	display: block;
@@ -447,5 +550,31 @@ footer ul {
 footer ul {
 	line-height: 30px;
 	text-align: left;
+}
+/**Lucas' Media Queries**/
+.next{
+	position: relative;
+	display: inline-block;
+	right: 5%;
+	float: right;
+	top: 30%;
+}
+.prev{
+	position: relative;
+	display: inline-block;
+	float: left;
+	top: 30%;
+	left: 5%;
+}
+.arrow{
+	width: 100px;
+}
+.closer{
+	width: 5%;
+	padding: 10px;
+	top: 0;
+	right: 0;	
+	display: block;
+	position: relative;
 }
 }
