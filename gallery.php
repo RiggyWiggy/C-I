@@ -1,7 +1,7 @@
 <?php
 
   require_once('admin/phpscripts/connect.php');
-  $sqlCompile = "SELECT img_id, img_title, img_src, img_thumb FROM tbl_imgs";
+  $sqlCompile = "SELECT img_id, img_title, img_src, img_thumb, img_mobile FROM tbl_imgs";
 
 
   $initialRun = mysqli_query($link, $sqlCompile);
@@ -36,7 +36,7 @@
           <li><a href="newsandevents.html">News & Events</a></li>
           <li><a href="booking.html">Booking</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="gallery.php">Gallery</a></li>
           <li><a href="donate.html">Donations</a></li>
         </ul>
       </div>
@@ -61,7 +61,8 @@
     //will make prev and next into SVGs later on
     echo "<img class='prev arrow' id='prev-{$row['img_id']}' src='images/left-arrow.png'>";
     echo "<img class='next arrow' id='next-{$row['img_id']}' src='images/right-arrow.png'>";
-    echo "<img src='images/gallery/{$row['img_src']}' class='full-gal-img' alt='{$row['img_title']}'>";
+    // removed src='images/gallery/{$row['img_src']}' 
+    echo "<img data-interchange='[images/gallery/{$row['img_mobile']}, small], [images/gallery/{$row['img_src']}, large]'  class='full-gal-img' alt='{$row['img_title']}'>";
     echo "</div>";  
     echo "<section class='row small-12 medium-4 large-2' id='workGallery'>";  
     echo "<img class='galImg' id='{$row['img_id']}'src='images/gallery/{$row['img_thumb']}' alt='{$row['img_title']}'>";
