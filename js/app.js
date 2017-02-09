@@ -20,7 +20,7 @@ var next = document.querySelectorAll(".next");
 
 function targetedImg(e){
 	var selectedImg = e.currentTarget.id;
-	console.log(selectedImg);
+	//console.log(selectedImg);
 if (mainImgCont.id = selectedImg){
 	var trimmedImg = selectedImg.substr(-1);
 	var num = trimmedImg - 1;
@@ -69,13 +69,13 @@ function imgNext(e){
 	var endOfGal = mainImgCont.length;
 	var endTrim = endOfGal + 1;
 	if (currImg > mainImgCont.length){
-		console.log(mainImgCont.length);
+		//console.log(mainImgCont.length);
 			mainImgCont[currImg].classList.toggle('hide');
 	//Cannot figure out how to stop the erroring.Functionality still works.
 	} else if (currImg <= endOfGal){
 		mainImgCont[currImg].classList.toggle('hide');
 		mainImgCont[nextTrim].classList.remove('hide');
-		console.log(nextTrim);
+		//console.log(nextTrim);
 	}
 }
 
