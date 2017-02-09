@@ -1,4 +1,14 @@
-<!doctype html>
+<?php
+
+  require_once('admin/phpscripts/connect.php');
+  $sqlCompile = "SELECT img_id, img_title, img_src, img_thumb, img_mobile FROM tbl_imgs";
+
+
+  $initialRun = mysqli_query($link, $sqlCompile);
+
+
+   ?>
+<!DOCTYPE HTML>
 <html class="no-js" lang="en">
 <head>
 <meta charset="utf-8" />
@@ -10,6 +20,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Lora:400,700" rel="stylesheet">
 </head>
 <body>
+
 <h1 class="hide">Chantry Island</h1>
 <header id="topNav">
   <section class="row">
@@ -33,65 +44,34 @@
     <div class="small-12 large-1 large-offset-1 columns large-pull-10"> <a href="index.html"><img src="images/logo.svg" alt="logo" id="logoDesktop"></a> </div>
   </section>
 </header>
-<section class="row">
-  <div class="large-12 large-centered text-center columns">
-    <h2 class="text-center topHeader">Contact Us</h2>
-    <p>Have a question or comment? Feel free to contact us!</p>
-  </div>
-</section>
-<section class="contact">
-  <section class="row">
-    <div class="large-5 large-offset-1 columns">
-      <div class="infoBox infoBoxBold">
-        <ul>
-          <li class="contactInfoBold">By Phone</li>
-          <li>Call: 519-797-5862</li>
-          <li>Toll Free: 1-866-797-5862</li>
-        </ul>
-        <ul>
-          <li class="contactInfoBold">By Mail</li>
-          <li>Marine Heritage Society</li>
-          <li>Box 421</li>
-          <li>Southampton, Ontario</li>
-          <li>Canada, N0H 2L0</li>
-        </ul>
-        <ul id="contactSocial">
-          <li class="contactInfoBold">By Social Media</li>
-          <li><a href="index.html"><img src="images/facebook.png" alt="Facebook"></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="large-5 columns end">
-      <section id="form" class="infoBox">
-        <h2 id="formHeader">By Contact Form</h2>
-        <form id="contactForm" action="form.php" method="post">
-          <label for="name" class="text-left">Name</label>
-          <input type="text" required id="name" placeholder="Required">
-          <label for="email" class="text-left">E-mail</label>
-          <input type="email" required id="email" placeholder="Required">
-          <label for="comment"  class="text-left">Comment</label>
-          <textarea id="comment" required placeholder="Required" cols="50" rows="8"></textarea>
-          <input id="submit" type="submit" value="Submit">
-        </form>
-      </section>
-    </div>
-  </section>
-  <section class="row">
-    <div class="small-centered divider"> <img src="images/divider.svg" alt="divider"> </div>
-  </section>
+<section class="gallery">
   <section class="row">
     <div class="large-10 large-centered columns">
-      <h2 class="text-center headerCenter">Location & Directions</h2>
-      <h4>Our Location</h4>
-      <p>Chantry Island is located at 86 Saugeen Street, Southampton, Ontario, Canada N0H 2L0.</p>
-      <h4>Directions</h4>
-      <p>From Highway 21 in Southampton, turn west on Clarendon and follow the signs, or From High Street, (the main street), turn north on Huron or Grosvenor Street and look for the signs.</p>
+      <h2 class="topHeader text-center">Gallery</h2>
     </div>
   </section>
-  <section>
-    <h2 class="text-center headerCenter">Map</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11382.978359353363!2d-81.376054!3d44.4999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8829cfb09f0d9f8f%3A0x1763c7a384426522!2s86+Saugeen+St%2C+Southampton%2C+ON+N0H+2L0%2C+Canada!5e0!3m2!1sen!2sca!4v1486515484112" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-  </section>
+
+
+  <?php 
+  
+  
+  while ($row = mysqli_fetch_array($initialRun)){
+    echo "<div id='mainImg-{$row['img_id']}' class='full-img-cont hide'>";
+    echo "<img class='closer' id='closer-{$row['img_id']}' src='images/closer.png'>";
+    //will make prev and next into SVGs later on
+    echo "<img class='prev arrow' id='prev-{$row['img_id']}' src='images/left-arrow.png'>";
+    echo "<img class='next arrow' id='next-{$row['img_id']}' src='images/right-arrow.png'>";
+    // removed src='images/gallery/{$row['img_src']}' 
+    echo "<img data-interchange='[images/gallery/{$row['img_mobile']}, small], [images/gallery/{$row['img_src']}, large]'  class='full-gal-img' alt='{$row['img_title']}'>";
+    echo "</div>";  
+    echo "<section class='row small-12 medium-4 large-2' id='workGallery'>";  
+    echo "<img class='galImg' id='{$row['img_id']}'src='images/gallery/{$row['img_thumb']}' alt='{$row['img_title']}'>";
+    echo "</section>";  
+  }  
+   ?>
+
+
+
   <section class="row">
     <div class="small-4 small-centered large-2 large-centered columns" id="arrow"> <a href="#"><img src="images/arrow.svg" alt="Up Arrow"></a> </div>
   </section>
@@ -103,7 +83,7 @@
   <section class="row">
     <div class="large-4 columns">
       <h4>Sitemap</h4>
-      <ul>
+      <ul id="">
         <li><a href="about.html">About</a></li>
         <li><a href="newsandevents.html">News & Events</a></li>
         <li><a href="booking.html">Booking</a></li>
@@ -114,7 +94,7 @@
     </div>
     <div class="large-4 columns">
       <h4>Contact Us</h4>
-      <ul>
+      <ul id="">
         <li>Call: 519-797-5862</li>
         <li>Toll Free: 1-866-797-5862</li>
         <li>Marine Heritage Society</li>
@@ -125,7 +105,7 @@
     </div>
     <div class="large-4 columns">
       <h4>Other Attractions</h4>
-      <ul>
+      <ul id="">
         <li><a href="index.php" id="">Saugeen Shores</a></li>
         <li><a href="index.php#page2" id="">Bruce County Museum & Cultural Centre</a></li>
         <li><a href="work.html" id="">Bruce Coast</a></li>
@@ -139,7 +119,6 @@
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/what-input.min.js"></script>
 <script src="js/foundation.min.js"></script>
-<script src="js/work.js"></script>
 <script src="js/app.js"></script>
 </body>
-</html>
+</html
