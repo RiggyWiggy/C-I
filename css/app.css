@@ -7,6 +7,16 @@ body h1, h2, h3, h4 {
 	font-family: 'Lora', serif;
 	font-weight: 700;
 }
+
+body h2 {
+	font-size: 1.5em;
+}
+
+body h3 {
+	font-size: 1.6em;
+}
+
+
 a {
 	color: #e3e7e1;
 }
@@ -19,68 +29,9 @@ ul {
 	list-style-type: none;
 	font-weight: 700;
 }
-/**Gallery by Lucas**/
-.full-gal-img{
-	position: relative;
-	display: block;
-	margin: 0 auto;
-width: 60%;
-	
-}
-.full-img-cont{
-	position: absolute;
-	z-index: 10;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0, 0.8);
-	
-}
-.show{
-	display: block;
-}
-
-.galImg{
-	position: relative;
-	display: block;
-	padding: 20px;
-	margin: 0 auto;
-}
-
-#workGallery{
-	display: inline-block;
-	position: relative;
-
-}
-.next{
-	position: relative;
-	display: inline-block;
-	right: 5%;
-	float: right;
-	top: 5%;
-}
-.prev{
-	position: relative;
-	display: inline-block;
-	float: left;
-	top: 5%;
-	left: 5%;
-}
-.arrow{
-	width: 50px;
-}
-.closer{
-	width: 50px;
-	padding: 10px;
-	top: 0;
-	right: 0;	
-	display: block;
-	position: relative;
-}
-/****/
 #topWindow {
 	width: 100%;
-	padding-top: 56px;
+	padding-top: 10px;
 	padding-bottom: 90px;
 	background-image: url(../images/background.jpg);
 	background-position: bottom right;
@@ -101,22 +52,28 @@ width: 60%;
 /*Index Header Window*/
 
 #topWindow img {
-	margin-top: 60px;
-	margin-bottom: 40px;
+/*	margin-top: 60px;
+	margin-bottom: 40px;*/
 }
 #topWindow h2 {
-	font-size: 3.2em;
+	font-size: 2.4em;
 }
 .topHeader {
 	margin-bottom: 40px;
 	text-align: center;
 	font-weight: 700;
-	font-size: 3em;
+	font-size: 2.3em;
 }
 #logo {
 	width: 180px;
 	height: auto;
 	margin: 0 auto;
+}
+#logoFront {
+	width: 180px;
+	height: auto;
+	margin: 0 auto;
+	
 }
 /*Hamburger Menu*/
 
@@ -146,11 +103,7 @@ width: 60%;
 #info h2, h3, h4 {
 	color: #5e7c76;
 }
-#logoFront {
-	width: 180px;
-	height: auto;
-	margin: 0 auto;
-}
+
 .headerCenter {
 	color: #5e7c76;
 	margin-bottom: 40px;
@@ -158,17 +111,19 @@ width: 60%;
 }
 #info {
 	/*height: 40%;*/	
-	padding-top: 120px;
+	padding-top: 60px;
 	padding-bottom: 300px;
-	background-image: url(../images/waves.svg), url(../images/lighthouse.svg);
+	background-image: url(../images/waves.svg), url(../images/lighthouse2.svg);
 	background-size: contain, 400px auto;
 	background-repeat: no-repeat;
-	background-position: bottom, 80% -2%;
+	background-position: bottom, 80% 70%;
 }
+
+
 #info2 {
 	/*	height: 40%;
 */	background-color: #5e7c76;
-	/*padding-top: 120px;*/
+	padding-top: 60px;
 	color: #e3e7e1;
 }
 #info2 h3 {
@@ -190,6 +145,7 @@ width: 60%;
 	border-style: solid;
 	border-width: 4px;
 	text-decoration: none;
+	transition: all 0.3s ease 0s
 }
 #learnMore:hover {
 	background-color: #5e7c76;
@@ -209,6 +165,7 @@ width: 60%;
 	border-width: 4px;
 	font-weight: 700;
 	display: block;
+	transition: all 0.3s ease 0s
 }
 #bookATour:hover {
 	padding: 20px;
@@ -227,6 +184,13 @@ width: 60%;
 	color: #5e7c76;
 	text-decoration: none;
 }
+#tour {
+	background-image: url(../images/footprints.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
 /*About*/
 
 .about img {
@@ -240,6 +204,22 @@ width: 60%;
 	margin-bottom: 50px;
 	color: #5e7c76;
 }
+
+#about2 {
+
+	background-image: url(../images/lighthouse2.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+#about6 {
+	background-image: url(../images/birds.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
 #about2image img {
 	width: 500px;
 }
@@ -247,8 +227,22 @@ width: 60%;
 	margin-bottom: 60px;
 }
 /*News & Events*/
+
+.newsandevents h3 {
+	font-size: 2em;
+
+}
+
+
+
+#bookingNews {
+	color: #5e7c76;
+}
+
+
+
 .imageCon {
-	clip-path: circle(60px at center);
+	width: 100%;
 }
 .news-events-head {
 	margin-top: 20px;
@@ -279,7 +273,7 @@ width: 60%;
 .infoBox h2 {
 	font-size: 1.4em;
 }
-.infoBoxBold {
+.infoBoxBold ul {
 	font-size: 1.4em;
 	font-weight: 700;
 }
@@ -331,6 +325,21 @@ width: 60%;
 	width: 30px;
 	margin-bottom: 30px;
 }
+
+.contactSocial {
+margin: 0 auto;
+}
+
+.contactSocial img {
+	width: 30px;
+	margin-bottom: 30px;
+}
+
+.contactSocial li {
+	display: inline;
+	padding: 10px;
+}
+
 #formHeader {
 	margin-top: 30px;
 	font-family: 'Lato', sans-serif;
@@ -394,7 +403,7 @@ label {
 	display: table-header-group;
 }
 .divTableCell, .divTableHead {
-	border: 1px solid #000;
+	border: 1px solid #425350;
 	display: table-cell;
 	padding: 23px 40px;
 }
@@ -426,25 +435,28 @@ label {
 	margin-top: 20px;
 }
 #scheduleDetails li {
-	display: inline;
+
 	list-style-type: none;
-	padding: 20px;
+	padding-bottom: 6px;
 }
 /*Subpages*/
 
 
-
-
-
-
-
+#topNav {
+	width: 100%;
+	background-color: #5e7c76;
+	text-align: center;
+	margin-bottom: 60px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
 
 
 .divider {
 	height: 10px;
 	width: 300px;
-	margin-top: 60px;
-	margin-bottom: 80px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 #backToTop {
 	text-align: center;
@@ -456,7 +468,7 @@ label {
 	font-weight: 700;
 }
 #arrow {
-	margin-top: 120px;
+	margin-top: 30px;
 	width: 80px;
 }
 footer {
@@ -468,8 +480,13 @@ footer {
 }
 footer h4 {
 	text-transform: uppercase;
-	font-weight: 600;
+	text-decoration:underline;
+	font-weight: 700;
 	color: #e3e7e1;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 1.3em;
+
 }
 footer ul {
 	list-style: none;
@@ -477,104 +494,135 @@ footer ul {
 	margin: 0;
 	line-height: 40px;
 	text-align: center;
+	margin-bottom: 20px;
 }
+
+footer a {
+	font-size: 1.3em;
+
+}
+
 .footerContact {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	text-decoration: underline;
 }
+
+
+.footerSocial img {
+	width: 80px;
+/*	width: 60px;
+*/	/*padding-right: 20px;*/
+	padding: 20px;
+}
+
 .footerSocial {
-	width: 30px;
+	margin: 0 auto;
 }
+
+.footerSocial li {
+	display: inline;
+}
+
+
 #logoDesktop {
 	display: none;
 }
 #logo {
 	display: block;
 }
-@media screen and (min-width: 20em) {
-.next{
-	position: relative;
-	display: inline-block;
-	right: 5%;
-	float: right;
-	top: 10%;
-}
-.prev{
-	position: relative;
-	display: inline-block;
-	float: left;
-	top: 10%;
-	left: 5%;
-}
-.arrow{
-	width: 50px;
-}
-@media screen and (min-width: 50em) {
-.next{
-	position: relative;
-	display: inline-block;
-	right: 5%;
-	float: right;
-	top: 20%;
-}
-.prev{
-	position: relative;
-	display: inline-block;
-	float: left;
-	top: 20%;
-	left: 5%;
-}
-.arrow{
-	width: 50px;
-}
-.closer{
-	width: 50px;
-	padding: 10px;
-	top: 0;
-	right: 0;	
-	display: block;
-	position: relative;
-}
-}
+
 @media screen and (min-width: 64em) {
+
+body h2 {
+	font-size: 2.6em;
+
+}
+
+body h3 {
+	font-size: 2.3em;
+	margin-bottom: 20px;
+}
+
+#topWindow {
+	padding-top: 56px;
+	
+}
+#topWindow h2 {
+	font-size: 3.2em;
+}
+
 #logoDesktop {
 	display: block;
 }
 #logo {
 	display: none;
 }
+
 #menuLinks li {
 	display: inline;
 }
+
+#topNav {
+	margin-bottom: 60px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#info {
+	padding-top: 120px;
+	background-position: bottom, 80% -2%;
+}
+
+#info2 {
+	padding-top: 0px;
+	background-position: bottom, 80% -2%;
+}
+
+.topHeader {
+	font-size: 3em;
+}
+
+.newsandevents h3 {
+	font-size: 2.5em;
+
+}
+
+#scheduleDetails li {
+}
+
+#arrow {
+	margin-top: 120px;
+}
+
+.divider {
+	margin-top: 60px;
+	margin-bottom: 80px;
+}
+
 footer ul {
 	line-height: 30px;
 	text-align: left;
+	margin-bottom: 20px;
 }
-/**Lucas' Media Queries**/
-.next{
-	position: relative;
-	display: inline-block;
-	right: 5%;
-	float: right;
-	top: 30%;
+
+footer h4 {
+	margin-top: 0px;
+	margin-bottom: 30px;
+	text-align: left;
+	text-decoration: none;
 }
-.prev{
-	position: relative;
-	display: inline-block;
-	float: left;
-	top: 30%;
-	left: 5%;
+
+footer a {
+	font-size: 1em;
+
 }
-.arrow{
-	width: 100px;
+
+.footerSocial img {
+
+	width: 80px;
+	margin-left: -20px;
+
 }
-.closer{
-	width: 5%;
-	padding: 10px;
-	top: 0;
-	right: 0;	
-	display: block;
-	position: relative;
-}
+
 }
